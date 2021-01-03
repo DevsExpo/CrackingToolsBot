@@ -334,7 +334,7 @@ async def real_nigga(event):
 
 @UltraBot.on(events.ChatAction())
 async def _(event):
-    if event.is_channel:
+    if event.chat_id == Config.LOG_CHAT:
         return
     okbruh = await UltraBot.get_me()
     if event.user_joined or event.user_added == str(okbruh):
