@@ -6,6 +6,7 @@ from loggers import logging
 from BotConfig import Config
 from telethon.tl.functions.users import GetFullUserRequest
 from sql_s.broadcast_sql import add_usersid_in_db, already_added, get_all_users
+from telethon.tl.functions.users import GetFullUserRequest
 
 bot = TelegramClient("bot", api_id=Config.API_ID, api_hash=Config.API_HASH)
 UltraBot = bot.start(bot_token=Config.BOT_TOKEN)
