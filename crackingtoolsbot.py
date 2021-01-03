@@ -347,7 +347,7 @@ async def _(event):
 
 @UltraBot.on(events.NewMessage(pattern="^/start ?(.*)"))
 async def atomz(event):
-    replied_user = await hmm.client(GetFullUserRequest(event.sender_id))
+    replied_user = await UltraBot(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     await event.reply('**Hai, {firstname} !, I Am Simple Cracking Tools Bot. PLease Use /help To See Cmds ! \nBy @DevsExpo**')
     
