@@ -350,7 +350,7 @@ async def _(event):
 async def atomz(event):
     replied_user = await UltraBot(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
-    await event.reply('**Hai, {firstname} !, I Am Simple Cracking Tools Bot. PLease Use /help To See Cmds ! \nBy @DevsExpo**')
+    await event.reply(f'**Hai, {firstname} !, I Am Simple Cracking Tools Bot. PLease Use /help To See Cmds ! \nBy @DevsExpo**')
     
 @UltraBot.on(events.NewMessage(pattern="^/leave ?(.*)"))
 async def bye(event):
