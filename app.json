@@ -1,0 +1,68 @@
+{
+  "name": "CrackingUtilsBot",
+  "description": "Simple Cracking Tools Bot in Telethon.",
+  "logo": "https://images.discordapp.net/avatars/224415693393625088/8f6a0ca7e883f87241b02ba8e1328f34.png",
+  "keywords": [
+    "telegram",
+    "cracking",
+    "plugin",
+    "telegram-bot",
+    "productivity"
+  ],
+  "repository": "https://github.com/DevsExpo/CrackingToolsBot",
+  "website": "starkgang.ml",
+  "success_url": "t.me/devsExpo",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable heroku.",
+      "value": "ANYTHING"
+    },
+    "BOT_TOKEN": {
+      "description": "Your Bot Token.",
+      "value": ""
+    },
+    "APP_ID": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "JTU_ENABLE": {
+      "description": "Do You Wish To Enable Join To Message System?",
+      "value": "True"
+    },
+    "LOG_CHAT": {
+      "description": "Chat Where You Want Logs To Be Logged :)",
+      "value": "-100"
+    },
+    "OWNER_ID": {
+      "description": "Put Your Fking ID",
+      "value": "123456789"
+    },
+    "JTU_ID": {
+      "description": "First Set JTU_ENABLE To True. Put Channel ID where u want to enable checking, Don't Forget To Add Bot To That Channel.",
+      "value": "-100",
+      "required": false
+    },
+    "JTU_LINK": {
+      "description": "First Set JTU_ENABLE To True. Put Channel Link where u want to enable checking, Don't Forget To Add Bot To That Channel.",
+      "value": "t.me/yourchannelsusernamehereokay",
+      "required": false
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+ ],
+"addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ]
+}
