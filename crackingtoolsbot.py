@@ -334,6 +334,8 @@ async def real_nigga(event):
 
 @UltraBot.on(events.ChatAction())
 async def _(event):
+    if event.is_channel:
+        return
     okbruh = await UltraBot.get_me()
     if event.user_joined or event.user_added == str(okbruh):
         lol = event.chat_id
@@ -348,6 +350,15 @@ async def atomz(event):
     replied_user = await hmm.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     await event.reply('**Hai, {firstname} !, I Am Simple Cracking Tools Bot. PLease Use /help To See Cmds ! \nBy @DevsExpo**')
+    
+@UltraBot.on(events.NewMessage(pattern="^/leave ?(.*)"))
+async def bye(event):
+    if not event.sender_id != Config.OWNER_ID:
+        await event.reply('`Who is This Gey Commanding Me To Leave :/`')
+        return
+    okbruh = await chatbot.get_me()
+    await event.reply('Time To leave :(')
+    await UltraBot.kick_participant(event.chat_id, okbruh.id)
                 
 @UltraBot.on(events.NewMessage(pattern="^/help ?(.*)"))
 async def no_help(event):
@@ -369,6 +380,7 @@ async def no_help(event):
                 
 @UltraBot.on(events.NewMessage(pattern="^/broadcast ?(.*)"))
 async def atomz(event):
+    error_count = 0
     msgtobroadcast = event.pattern_match.group(1)
     if event.sender_id != Config.OWNER_ID:
         event.reply("**Fuck OFF Bitch !**")
