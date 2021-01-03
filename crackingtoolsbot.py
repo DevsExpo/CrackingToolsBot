@@ -362,7 +362,7 @@ async def bye(event):
                 
 @UltraBot.on(events.NewMessage(pattern="^/help ?(.*)"))
 async def no_help(event):
-    replied_user = await hmm.client(GetFullUserRequest(event.sender_id))
+    replied_user = await UltraBot(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     lol_br = """
     /start - start me 
