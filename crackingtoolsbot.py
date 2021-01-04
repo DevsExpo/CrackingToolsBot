@@ -151,7 +151,7 @@ async def Devsexpo(event):
 **Combo:** {email}:{password}
 **Email:** {email}
 **Password:-** {password}
-**Response:-** This Account Is valid. 😀
+**Response:-** This Account Is Invalid. 😔
 
 🔱 **Checked By:-** {event.sender_id}
 
@@ -163,7 +163,7 @@ Bot Made By @DevsExpo**"""
 **Combo:** {email}:{password}
 **Email:** {email}
 **Password:-** {password}
-**Response:-** This Account Is Invalid.😔
+**Response:-** This Account Is valid.😀
 **Login Here**: www.zee5.com
 
 🔱 **Checked By:-** {event.sender_id}
@@ -262,7 +262,7 @@ async def Devsexpo(event):
 **Combo:** {email}:{password}
 **Email:** {email}
 **Password:-** {password}
-**Response:-** This Account Is valid. 😀
+**Response:-** This Account Is Invalid. 😔
 
 🔱 **Checked By:-** {event.sender_id}
 
@@ -274,7 +274,7 @@ Bot Made By @DevsExpo**"""
 **Combo:** {email}:{password}
 **Email:** {email}
 **Password:-** {password}
-**Response:-** This Account Is Invalid.😔
+**Response:-** This Account Is valid.😀
 **Login Here**: www.nordvpn.com
 
 🔱 **Checked By:-** {event.sender_id}
@@ -369,7 +369,7 @@ async def Devsexpo(event):
 **Combo:** {email}:{password}
 **Email:** {email}
 **Password:-** {password}
-**Response:-** This Account Is valid. 😀
+**Response:-** This Account Is Invalid. 😔
 
 🔱 **Checked By:-** {event.sender_id}
 
@@ -381,7 +381,7 @@ Bot Made By @DevsExpo**"""
 **Combo:** {email}:{password}
 **Email:** {email}
 **Password:-** {password}
-**Response:-** This Account Is Invalid.😔
+**Response:-** This Account Is valid.😀
 **Login Here**: www.vortex.gg
 
 🔱 **Checked By:-** {event.sender_id}
