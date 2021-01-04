@@ -165,7 +165,7 @@ Bot Made By @DevsExpo**"""
 **Password:-** {password}
 **Response:-** This Account Is Invalid.😔
 
-🔱 **Checked By:-** {lolu.user.username}
+🔱 **Checked By:-** {event.sender_id}
 
 **✅Better Luck Next Time, Thanks For Using Me. 
 Bot Made By @DevsExpo**"""
