@@ -366,16 +366,16 @@ async def no_help(event):
     replied_user = await UltraBot(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     lol_br = """
-    /start - start me 
-    /help - ??
-    /zee5 <email:password> - Checks One Account
-    /zee5 combo - Reply To Combos File And Limit is 20.
-    /nord <email:password> - Checks One Account
-    /nord combo - Reply To Combos File And Limit is 20.
-    /vortex <email:password> - Checks One Account
-    /vortex combo - Reply To Combos File And Limit is 20.
-    /proxy - Reply To Proxy File Only, Check Your Proxies
-    BY @DevsExpo
+- /start - start me 
+- /help - ??
+- /zee5 <email:password> - Checks One Account
+- /zee5 combo - Reply To Combos File And Limit is 20.
+- /nord <email:password> - Checks One Account
+- /nord combo - Reply To Combos File And Limit is 20.
+- /vortex <email:password> - Checks One Account
+- /vortex combo - Reply To Combos File And Limit is 20.
+- /proxy - Reply To Proxy File Only, Check Your Proxies
+BY @DevsExpo
     """
     await event.reply(f'**Hai, {firstname} !, Here is List Of Cmds \n{lol_br}**')
                 
