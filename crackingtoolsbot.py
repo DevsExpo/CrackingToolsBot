@@ -146,10 +146,19 @@ async def Devsexpo(event):
         meke = requests.get(
             f"https://userapi.zee5.com/v1/user/loginemail?email={email}&password={password}"
         ).json()
+        beautiful = f"""
+💖 Checked Zee5 Account
+Combo: {email}:{password}
+Email: {email}
+Password:- {password}
+Response:- This Account Is Invalid.
+
+✅Better Luck Next Time, Thanks For Using Me. 
+Bot Made By @DevsExpo"""
         if meke.get("token"):
             await event.reply("`Yay, This is A Hit`")
         else:
-            await event.reply("`So Sad, This is Invalid Account`")
+            await event.reply(beautiful)
 
 
 @UltraBot.on(events.NewMessage(pattern="^/nord ?(.*)"))
