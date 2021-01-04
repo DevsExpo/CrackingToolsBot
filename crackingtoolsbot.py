@@ -354,7 +354,7 @@ async def atomz(event):
     
 @UltraBot.on(events.NewMessage(pattern="^/leave ?(.*)"))
 async def bye(event):
-    if not event.sender_id != Config.OWNER_ID:
+    if event.sender_id != Config.OWNER_ID:
         await event.reply('`Who is This Gey Commanding Me To Leave :/`')
         return
     okbruh = await chatbot.get_me()
