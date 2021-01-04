@@ -357,7 +357,7 @@ async def bye(event):
     if event.sender_id != Config.OWNER_ID:
         await event.reply('`Who is This Gey Commanding Me To Leave :/`')
         return
-    okbruh = await chatbot.get_me()
+    okbruh = await UltraBot.get_me()
     await event.reply('Time To leave :(')
     await UltraBot.kick_participant(event.chat_id, okbruh.id)
                 
