@@ -108,7 +108,7 @@ async def Devsexpo(event):
       hits = 0
       bady = 0
       lol = await event.get_reply_message()
-      if not lol.media:
+      if lol ==None:
         await ok.edit('Reply To File')
         return
       humm = await UltraBot.download_media(lol.media, Config.DL_LOCATION)
