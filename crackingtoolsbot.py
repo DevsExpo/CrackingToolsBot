@@ -153,7 +153,7 @@ async def Devsexpo(event):
               await UltraBot.send_file(event.chat_id, "hits.txt", caption=f"**!NORD HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bady}`")
               os.remove("hits.txt")
               sys.exit()
-      if hits == 0:
+      if len(good_dict) == 0:
         await ok.edit("**0 Hits. Probably, You Should Find Better Combos. LoL**")
         return
       with open("hits.txt", "w") as hitfile:
