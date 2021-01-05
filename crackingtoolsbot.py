@@ -145,14 +145,6 @@ async def Devsexpo(event):
           c = kk.get("code")
           if c == 1906:
             await ok.edit("voot server is blocking the requests. please try after few minutes...")
-            if len(good_dict) == 0:
-                sys.exit()
-            with open("hits.txt", "w") as hitfile:
-              for s in good_dict:
-                hitfile.write(s + ' | @FridayOT')
-              await UltraBot.send_file(event.chat_id, "hits.txt", caption=f"**!NORD HITS!** \n**HITS :** `{hits}` \n**BAD :** `{bady}`")
-              os.remove("hits.txt")
-              sys.exit()
       if len(good_dict) == 0:
         await ok.edit("**0 Hits. Probably, You Should Find Better Combos. LoL**")
         return
