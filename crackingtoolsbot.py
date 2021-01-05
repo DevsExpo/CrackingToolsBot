@@ -55,7 +55,7 @@ async def Devsexpo(event):
         "CHECKING PROXIES... PLEASE WAIT. MAY TAKE TIME DEPENDING ON NUMBER OF PROXIES."
     )
     pablo = await event.get_reply_message()
-    if not pablo.media:
+    if pablo == None:
         await event.reply('Reply To File')
         return
     escobar = await UltraBot.download_media(pablo.media, Config.DL_LOCATION)
@@ -186,7 +186,7 @@ async def Devsexpo(event):
         hits = 0
         bads = 0
         lol = await event.get_reply_message()
-        if not lol.media:
+        if lol == None:
             await ok.edit('Reply To File')
             return
         starky = await UltraBot.download_media(lol.media, Config.DL_LOCATION)
@@ -291,7 +291,7 @@ async def Devsexpo(event):
         hits = 0
         bads = 0
         lol = await event.get_reply_message()
-        if not lol.media:
+        if lol == None:
             await event.reply('Reply To File')
             return
         starky = await UltraBot.download_media(lol.media, Config.DL_LOCATION)
@@ -402,7 +402,7 @@ async def Devsexpo(event):
         hits = 0
         bads = 0
         lol = await event.get_reply_message()
-        if not lol.media:
+        if lol == None:
             await event.reply('Reply To File')
             return
         starky = await UltraBot.download_media(lol.media, Config.DL_LOCATION)
