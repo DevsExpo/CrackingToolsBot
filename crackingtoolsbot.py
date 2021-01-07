@@ -113,13 +113,11 @@ async def Devsexpo(event):
             await ok.edit('Reply To File')
             return
         starky = await UltraBot.download_media(lol.media, Config.DL_LOCATION)
-        file = open(starky, "r")
-        lines = file.readlines()
-        if len(lines) > 20:
+        with open(starky) as f:
+            stark_dict = f.read().splitlines()
+        if len(stark_dict) > 30:
             await ok.edit("`Woah, Thats A Lot Of Combos. Keep 20 As Limit`")
             return
-        for line in lines:
-            stark_dict.append(line)
         os.remove(starky)
         for i in stark_dict:
             starkm = i.split(":")
@@ -218,13 +216,11 @@ async def Devsexpo(event):
             await event.reply('Reply To File')
             return
         starky = await UltraBot.download_media(lol.media, Config.DL_LOCATION)
-        file = open(starky, "r")
-        lines = file.readlines()
-        if len(lines) > 20:
+        with open(starky) as f:
+            stark_dict = f.read().splitlines()
+        if len(stark_dict) > 30:
             await ok.edit("`Woah, Thats A Lot Of Combos. Keep 20 As Limit`")
             return
-        for line in lines:
-            stark_dict.append(line)
         os.remove(starky)
         for i in stark_dict:
             starkm = i.split(":")
@@ -329,13 +325,11 @@ async def Devsexpo(event):
             await event.reply('Reply To File')
             return
         starky = await UltraBot.download_media(lol.media, Config.DL_LOCATION)
-        file = open(starky, "r")
-        lines = file.readlines()
-        if len(lines) > 20:
+        with open(starky) as f:
+            stark_dict = f.read().splitlines()
+        if len(stark_dict) > 20:
             await ok.edit("`Woah, Thats A Lot Of Combos. Keep 20 As Limit`")
             return
-        for line in lines:
-            stark_dict.append(line)
         os.remove(starky)
         for i in stark_dict:
             starkm = i.split(":")
