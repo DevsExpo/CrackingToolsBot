@@ -468,7 +468,7 @@ async def atomz(event):
     error_count = 0
     msgtobroadcast = event.pattern_match.group(1)
     if event.sender_id != Config.OWNER_ID:
-        event.reply("**Fuck OFF Bitch !**")
+        await event.reply("**Fuck OFF Bitch !**")
         return
     hmm = get_all_users()
     for starkcast in hmm:
