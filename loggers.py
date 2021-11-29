@@ -5,11 +5,6 @@ from logging import DEBUG, WARNING, basicConfig, getLogger, INFO
 from logging.handlers import RotatingFileHandler
 import logging
 ENV = os.environ.get("ENV", False)
-if ENV:
-    pass
-else:
-    pass
-
 ENV = os.environ.get("ENV", False)
 if bool(ENV):
     CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
